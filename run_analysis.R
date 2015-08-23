@@ -32,7 +32,7 @@ runAnalysis <- function() {
     subject_train <- read.table("train/subject_train.txt")
     subjects <- rbind(subject_test, subject_train)[, 1]
     
-    df <- cbind(Activity = activities, Subject = subtidyjects, filtered)
+    df <- cbind(Activity = activities, Subject = subjects, filtered)
     
     tidy <- aggregate(df, by = list(Activity = df$Activity, Subject = df$Subject), FUN = "mean")
     tidy[,3] = NULL
